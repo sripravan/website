@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include meta.html %}
+    {% include styles.html %}
+</head>
+
+<body>
+    {% include header.html %}
+    <main>
+        <section class="about">
+            <img src="/assets/img/pravan.jpg" height="150px" alt="Sri Pravan Paturi">
+            <div>
+                {{ content }}
+            </div>
+        </section>
+        <h1>I write</h1>
+        <section class="feed">
+            {% include feed.html %}
+        </section>
+    </main>
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
+
+</html>

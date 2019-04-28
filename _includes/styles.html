@@ -1,0 +1,512 @@
+<style>
+  /* latin-ext */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhd_eFb5N.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  /* latin */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /* latin-ext */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjWr7AI9sdO_q.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  /* latin */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  :root {
+    /* Color Scheme */
+    --dark-grey: #31343F;
+    --light-grey: #F8F8F8;
+    --dark-blue: #03296E;
+    --light-blue: #0652DD;
+
+    /* Responsive */
+    --responsive-breakpoint: 800px;
+
+    /* Font Stacks */
+    --font-stack-sans-serif: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --font-stack-monospace: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  }
+
+  /* Reset */
+  html,
+  body {
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    font-family: var(--font-stack-sans-serif);
+    line-height: 1.75;
+  }
+
+  /* Highlight CSS - Rouge Highlighter */
+  .highlighter-rouge {
+    border-radius: 10px;
+    background-color: var(--dark-grey);
+    overflow-x: auto;
+  }
+
+  .highlight {
+    margin: 0;
+    padding: 0;
+  }
+
+  .highlight .rouge-table td {
+    padding: 12px;
+  }
+
+  .highlight,
+  pre.highlight {
+    background: var(--dark-grey);
+    color: #dee2f7;
+  }
+
+  .highlight pre {
+    margin: 0;
+    background: var(--dark-grey);
+  }
+
+  .highlight .hll {
+    background: var(--dark-grey);
+  }
+
+  .highlight .c {
+    color: #63677e;
+    font-style: italic;
+  }
+
+  .highlight .err {
+    color: #960050;
+    background-color: #1e0010;
+  }
+
+  .highlight .k {
+    color: #e19ef5;
+  }
+
+  .highlight .l {
+    color: #a3eea0;
+  }
+
+  .highlight .n {
+    color: #dee2f7;
+  }
+
+  .highlight .o {
+    color: #dee2f7;
+  }
+
+  .highlight .p {
+    color: #dee2f7;
+  }
+
+  .highlight .cm {
+    color: #63677e;
+    font-style: italic;
+  }
+
+  .highlight .cp {
+    color: #63677e;
+    font-style: italic;
+  }
+
+  .highlight .c1 {
+    color: #63677e;
+    font-style: italic;
+  }
+
+  .highlight .cs {
+    color: #63677e;
+    font-style: italic;
+  }
+
+  .highlight .ge {
+    font-style: italic;
+  }
+
+  .highlight .gs {
+    font-weight: 700;
+  }
+
+  .highlight .kc {
+    color: #e19ef5;
+  }
+
+  .highlight .kd {
+    color: #e19ef5;
+  }
+
+  .highlight .kn {
+    color: #e19ef5;
+  }
+
+  .highlight .kp {
+    color: #e19ef5;
+  }
+
+  .highlight .kr {
+    color: #e19ef5;
+  }
+
+  .highlight .kt {
+    color: #e19ef5;
+  }
+
+  .highlight .ld {
+    color: #a3eea0;
+  }
+
+  .highlight .m {
+    color: #eddc96;
+  }
+
+  .highlight .s {
+    color: #a3eea0;
+  }
+
+  .highlight .na {
+    color: #eddc96;
+  }
+
+  .highlight .nb {
+    color: #fdce68;
+  }
+
+  .highlight .nc {
+    color: #fdce68;
+  }
+
+  .highlight .no {
+    color: #fdce68;
+  }
+
+  .highlight .nd {
+    color: #fdce68;
+  }
+
+  .highlight .ni {
+    color: #fdce68;
+  }
+
+  .highlight .ne {
+    color: #fdce68;
+  }
+
+  .highlight .nf {
+    color: #dee2f7;
+  }
+
+  .highlight .nl {
+    color: #fdce68;
+  }
+
+  .highlight .nn {
+    color: #dee2f7;
+  }
+
+  .highlight .nx {
+    color: #dee2f7;
+  }
+
+  .highlight .py {
+    color: #fdce68;
+  }
+
+  .highlight .nt {
+    color: #f9867b;
+  }
+
+  .highlight .nv {
+    color: #fdce68;
+  }
+
+  .highlight .ow {
+    font-weight: 700;
+  }
+
+  .highlight .w {
+    color: #f8f8f2;
+  }
+
+  .highlight .mf {
+    color: #eddc96;
+  }
+
+  .highlight .mh {
+    color: #eddc96;
+  }
+
+  .highlight .mi {
+    color: #eddc96;
+  }
+
+  .highlight .mo {
+    color: #eddc96;
+  }
+
+  .highlight .sb {
+    color: #a3eea0;
+  }
+
+  .highlight .sc {
+    color: #a3eea0;
+  }
+
+  .highlight .sd {
+    color: #a3eea0;
+  }
+
+  .highlight .s2 {
+    color: #a3eea0;
+  }
+
+  .highlight .se {
+    color: #a3eea0;
+  }
+
+  .highlight .sh {
+    color: #a3eea0;
+  }
+
+  .highlight .si {
+    color: #a3eea0;
+  }
+
+  .highlight .sx {
+    color: #a3eea0;
+  }
+
+  .highlight .sr {
+    color: #7be2f9;
+  }
+
+  .highlight .s1 {
+    color: #a3eea0;
+  }
+
+  .highlight .ss {
+    color: #7be2f9;
+  }
+
+  .highlight .bp {
+    color: #fdce68;
+  }
+
+  .highlight .vc {
+    color: #fdce68;
+  }
+
+  .highlight .vg {
+    color: #fdce68;
+  }
+
+  .highlight .vi {
+    color: #f9867b;
+  }
+
+  .highlight .il {
+    color: #eddc96;
+  }
+
+  .highlight .gu {
+    color: #75715e;
+  }
+
+  .highlight .gd {
+    color: #f92672;
+  }
+
+  .highlight .gi {
+    color: #a6e22e;
+  }
+
+  /* Styling Markdown */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--dark-blue);
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    color: var(--light-blue);
+    text-decoration: none;
+  }
+
+  blockquote,
+  em,
+  i {
+    font-style: oblique;
+  }
+
+  blockquote {
+    margin: 0;
+    padding-left: 16px;
+    border-left: 4px solid var(--dark-grey);
+  }
+
+  code * {
+    font-family: inherit;
+    font-family: var(--font-stack-monospace);
+  }
+
+  /* Body */
+  body {
+    background-color: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Containers */
+  header,
+  main,
+  footer p {
+    width: 100%;
+    max-width: var(--responsive-breakpoint);
+    margin: auto;
+    padding: 24px 32px;
+  }
+
+  header {
+    padding-bottom: 0px;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex-shrink: 0;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 24px;
+  }
+
+  /* Home Page */
+  .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 572px) {
+    .about {
+      flex-wrap: wrap;
+    }
+  }
+
+  .about>* {
+    padding: 0px 10px;
+  }
+
+  .about img {
+    border-radius: 50%;
+  }
+
+  .feed {
+    border-radius: 10px;
+    padding: 32px;
+    background-color: #FFF;
+  }
+
+  .feed ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .feed li {
+    display: block;
+  }
+
+  .feed li:not(:first-child) {
+    padding-top: 20px;
+  }
+
+  .feed .title {
+    font-size: 21px;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .feed .title:hover {
+    color: var(--light-blue);
+  }
+
+  .feed .excerpt {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  /* Article */
+  .article-title {
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-published {
+    color: var(--dark-grey);
+    font-weight: bold;
+  }
+
+  article {
+    border-radius: 10px;
+    background-color: #FFF;
+    margin: 16px 0px;
+    padding: 16px 32px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--dark-grey);
+    color: #FFF;
+  }
+</style>
