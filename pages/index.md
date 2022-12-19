@@ -2,8 +2,8 @@
 layout: home
 permalink: /
 ---
-I am a [student developer](https://www.linkedin.com/in/pravan/) who is excited about leveraging the internet to improve human experience.
+I like tinkering around a lot of things in tech. Want to stay that way for as long as I can. Feel free to hit me up with anything interesting. 🙂
 
-Check out some of my projects on [Github](https://github.com/pravan). To talk to me about anything, send me an [email](mailto:pravanpaturi@gmail.com) or [send a direct message](https://twitter.com/messages/compose?recipient_id=746848608) to me on my [twitter account](https://twitter.com/sripravan).
+Useful Links: [Email](mailto:pravanpaturi@gmail.com) . [Resume](/assets/docs/sri-pravan-paturi-resume.pdf) . [Github](https://github.com/sripravan)
 
-Also, here's my [resume](/sri-pravan-paturi-resume.pdf).
+Social Media: [LinkedIn](https://www.linkedin.com/in/sripravan) . [Twitter](https://twitter.com/sripravan) . [Instagram](https://www.instagram.com/sripravan/)
