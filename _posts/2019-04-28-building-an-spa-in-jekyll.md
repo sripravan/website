@@ -94,12 +94,6 @@ Obviously, add the **local-link** class to all links local to the website to mak
 
 ## Conclusion
 
-It is not very hard to build an SPA and does not require any fancy JS frameworks. In fact, using innerHTML is also much more efficient than using DOM directly, using Virutal DOM or any other similar alternatives and is enough for a simple blog application.
+It is not very hard to build an SPA and does not require any fancy JS frameworks. 
 
-Also, not to brag but I believe that performance of websites is quite important for good user experience and I made sure that my website scores a 100 in all categories of Google Audits and how I did that can be another article.
-
-!["Audits of pravan.me"](/assets/img/audits.png)
-
-Here's a link to my website: <https://www.pravan.me> and here's a link to the Github repository with the source code of my website: <https://github.com/pravan/website>.
-
-Thank you for reading this article. 😁
+P.S. [Turbo][https://turbo.hotwired.dev/] is a much better option for someone who wants to achieve a similar result. Also, my website is no longer an SPA.
