@@ -2,7 +2,7 @@
     {% for post in site.posts %}
     <li>
         <a href="{{ post.url }}" class="title local-link">{{ post.title }}</a>
-        <p class="excerpt">{{ post.excerpt | strip_html }}<a href="{{ post.url }}" class="local-link">Read more</a></p>
+        <p class="excerpt">{{ post.excerpt | strip_html }}</p>
     </li>
     {% endfor %}
 </ul>

@@ -96,4 +96,4 @@ Obviously, add the **local-link** class to all links local to the website to mak
 
 It is not very hard to build an SPA and does not require any fancy JS frameworks. 
 
-P.S. [Turbo][https://turbo.hotwired.dev/] is a much better option for someone who wants to achieve a similar result. Also, my website is no longer an SPA.
+P.S. [Turbo](https://turbo.hotwired.dev/) is a much better option for someone who wants to achieve a similar result. Also, my website is no longer an SPA.
