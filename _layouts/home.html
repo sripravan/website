@@ -3,14 +3,16 @@
 
 <head>
     {% include meta.html %}
-    {% include styles.html %}
+    {% include styles/theme.html %}
+    {% include styles/custom.html %}
 </head>
 
 <body>
     {% include header.html %}
     <main>
+        <h1>I am</h1>
         <section class="about">
-            <img src="/assets/img/pravan.jpg" height="150px" alt="Sri Pravan Paturi">
+            <img src="/assets/img/pravan.jpg" height="150" width="150" alt="Sri Pravan Paturi">
             <div>
                 {{ content }}
             </div>
