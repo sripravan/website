@@ -1,26 +1,28 @@
 <script>
-  function getCurrentTheme() {
-    if (localStorage.getItem('theme')) {
-      return localStorage.getItem('theme');
+  (function () {
+    function getCurrentThemeSelection() {
+      if (localStorage.getItem('themeSelection')) {
+        return localStorage.getItem('themeSelection');
+      }
+
+      return 'system';
     }
 
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    function getCurrentTheme() {
+      var themeSelection = getCurrentThemeSelection();
+      var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var currentTheme = (themeSelection === 'system') ? systemTheme : themeSelection;
+
+      return currentTheme;
     }
 
-    return 'light';
-  }
+    var $themeSelect = document.getElementById("theme-select");
+    $themeSelect.value = getCurrentThemeSelection();
+    document.documentElement.setAttribute("data-theme", getCurrentTheme());
 
-  var theme = getCurrentTheme();
-  var $themeSwitch = document.querySelector('.theme-switch input');
-
-  $themeSwitch.checked = (theme === 'dark')
-  document.documentElement.setAttribute("data-theme", theme);
-
-  $themeSwitch.addEventListener('change', function (event) {
-    var theme = event.target.checked ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-    document.documentElement.setAttribute("data-theme", theme);
-    $themeSwitch.setAttribute("aria-checked", event.target.checked.toString());
-  });
+    document.getElementById("theme-select").addEventListener('change', function (event) {
+      localStorage.setItem('themeSelection', event.target.value);
+      document.documentElement.setAttribute("data-theme", getCurrentTheme());
+    });
+  })();
 </script>
