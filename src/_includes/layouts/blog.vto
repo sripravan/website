@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ include 'partials/head.vto' }}
+
+<body>
+    {{ include 'partials/header.vto' }}
+    <main class="feed">
+        {{ for post of search.pages("type=post", "date=desc") }}
+        <section>
+            <a href="{{ post.url }}">
+                <h3>{{ post.title }}</h3>
+            </a>
+            <time>{{ post.date |> date("MMMM dd, yyyy") }}</time>
+            {{# Considering the average reading speed to be 238 words per minute #}}
+            {{ set timeToRead = Math.ceil(post.content.split(/\s/).length / 238) }}
+            <span> &bull; {{ timeToRead }} {{ if timeToRead > 1 }}mins.{{ else }}min.{{/if}} read</span>
+            <p><em>{{ post.excerpt }}</em></p>
+        </section>
+        {{ /for }}
+    </main>
+    {{ include 'partials/footer.vto' }}
+    {{ include 'partials/scripts.vto' }}
+</body>
+
+</html>

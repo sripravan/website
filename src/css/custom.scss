@@ -1,0 +1,159 @@
+@use "./variables.scss" as vars;
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--text-color);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: var(--font-stack-base);
+  line-height: 1.75;
+}
+
+*:not(html):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
+}
+
+a:has(h1), a:has(h2), a:has(h3), a:has(h4), a:has(h5), a:has(h6) {
+  text-decoration-color: var(--heading-color) !important;
+}
+
+blockquote,
+em,
+i {
+  font-style: oblique;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 0.66rem;
+  border-left: 4px solid var(--border-color);
+}
+
+code {
+  border-radius: 1rem;
+}
+
+code, code * {
+  font-family: var(--font-stack-monospace);
+  font-size: 0.9rem !important;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.33rem;
+}
+
+header,
+main,
+article,
+footer {
+  max-width: vars.$responsive-breakpoint;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.33rem;
+}
+
+header nav,
+footer nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: vars.$responsive-breakpoint) {
+  header nav,
+  footer nav {
+    flex-direction: column;
+  }
+}
+
+header nav>*,
+footer nav>* {
+  margin: 0;
+  padding: 0;
+}
+
+main,
+article {
+  flex: 1 0 auto;
+  background-color: var(--sheet-color);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+article * {
+  max-width: 100%;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu li:not(:first-of-type) {
+  margin-left: 0.66rem;
+  padding: 0;
+}
+
+.feed {
+  background-color: var(--background-color);
+  border: 0;
+}
+
+.feed section {
+  padding: 1rem;
+  background-color: var(--sheet-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.feed section :last-child {
+  margin-bottom: 0;
+}
+
+.feed > *:not(:first-child) {
+  margin-top: 1.33rem;
+}
+
+#theme-select {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+html[data-theme="dark"] {
+  .theme-sensitive-image {
+    filter: invert(100%);
+  }
+}

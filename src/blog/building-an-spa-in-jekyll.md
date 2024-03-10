@@ -1,12 +1,17 @@
 ---
 title: Building an SPA in Jekyll
-layout: article
+layout: layouts/article.vto
+date: 2019-04-28
+type: post
+excerpt: An explanation of how I leveraged Jekyll's plugin system and the History API to build an SPA.
 ---
-I have created my personal site and blog using Jekyll while ensuring that it is an SPA and here's how I did it.
+GitHub pages uses Jekyll by default and so, I started using it for my website. Around the same time however, I was also exploring React and other client side Javascript frameworks typically used to build SPAs. This naturally led me to explore if I can combine these approaches.
 
-I know that there are alternatives to [Jekyll](https://jekyllrb.com/) that already generate an [SPA](https://en.wikipedia.org/wiki/Single-page_application) but the problem is that they are too opinionated on which JavaScript framework they use. For example, [Gatsby.js](https://www.gatsbyjs.org/) uses [React.js](https://reactjs.org/) and [Nuxt.js](https://nuxtjs.org/) uses [Vue.js](https://vuejs.org/) and for a simple blog I feel these frameworks are an overkill.
+One feature of these frameworks that intrigued me the most and that I wanted to really replicate was client side routing which meant that the client can avoid downloading the full HTML page.
 
-So I decided to stick with Jekyll, my favourite static site generator mostly because of the ability to extend it using plugins that can be written in Ruby.
+My idea was to leverage the Jekyll build process to create JSON files with only the unrepeated information. Then fetch these JSON files using an AJAX call, do client side rendering and use the History API for routing.
+
+Here's the step-by-step breakdown of how I implemented this idea:
 
 ## Step 1
 
@@ -90,10 +95,4 @@ window.addEventListener('popstate', function (e) {
 
 ## Step 4
 
-Obviously, add the **local-link** class to all links local to the website to make sure that all the JS written actually works. 😁
-
-## Conclusion
-
-It is not very hard to build an SPA and does not require any fancy JS frameworks. 
-
-P.S. [Turbo](https://turbo.hotwired.dev/) is a much better option for someone who wants to achieve a similar result. Also, my website is no longer an SPA.
+Obviously, add the **local-link** class to all links local to the website to make sure that all the JS written actually works.
