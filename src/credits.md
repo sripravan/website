@@ -15,7 +15,7 @@ layout: layouts/default.vto
 
 3. [Deno](https://deno.com/) which powers Lume and has been greatly helpful with lots of other work.
 
-4. I also used [Excalidraw](https://excalidraw.com/) from some of the diagrams in the blog posts.
+4. I also used [Excalidraw](https://excalidraw.com/) for some of the diagrams in the blog posts.
 
 5. The beautiful icons in the footer are [Feather Icons](https://feathericons.com/)
 
