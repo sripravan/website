@@ -2,7 +2,7 @@
 title: Building an SPA in Jekyll
 layout: layouts/article.vto
 date: 2019-04-28
-type: post
+type: article
 excerpt: An explanation of how I leveraged Jekyll's plugin system and the History API to build an SPA.
 ---
 GitHub pages uses Jekyll by default and so, I started using it for my website. Around the same time however, I was also exploring React and other client side Javascript frameworks typically used to build SPAs. This naturally led me to explore if I can combine these approaches.
